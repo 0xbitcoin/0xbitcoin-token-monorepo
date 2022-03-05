@@ -1,0 +1,694 @@
+{
+  "address": "0x7Dd35A96E61AFB03d68e287d18007790b6D71C8c",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract TellerAS",
+          "name": "_tellerAS",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "NotPayable",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "MarketCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "SetMarketURI",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "lenderAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "expirationTime",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint8",
+          "name": "v",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "r",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "s",
+          "type": "bytes32"
+        }
+      ],
+      "name": "attestLender",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_initialOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "_requireLenderAttestation",
+          "type": "bool"
+        },
+        {
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        }
+      ],
+      "name": "createMarket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getAllVerifiedLendersForMarket",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMarketOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMarketURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isPayable",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "lenderAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isVerifiedLender",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lenderAttestationSchemaId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "marketCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "schema",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "attestor",
+          "type": "address"
+        }
+      ],
+      "name": "resolve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "setMarketURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tellerAS",
+      "outputs": [
+        {
+          "internalType": "contract TellerAS",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "marketId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferMarketOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "artifactName": "MarketRegistry",
+  "transactionHash": "0x7634f637172015ae3af25600c2d9c002ccb66a0b129b280af17efa276d5d2663",
+  "receipt": {
+    "to": null,
+    "from": "0xAFe87013dc96edE1E116a288D80FcaA0eFFE5fe5",
+    "contractAddress": "0x7Dd35A96E61AFB03d68e287d18007790b6D71C8c",
+    "transactionIndex": 5,
+    "gasUsed": "1101186",
+    "logsBloom": "0x00000000000000000000000000008000000000000000000000000000000000000000000000000000000000000000000000008000000000000000000000000000000000000000000000000000000000800100000000000000000100000000004000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000080000000000000000000200000000000000000000000000000000000000000000000000000000000004000000000000100000001000000000000000000000000000000100040000000000000000000000000000000000000000000000000000000000000000000100000",
+    "blockHash": "0x44a4a505a922895323977eab8196f458758dd06f13e5c78741a896fc43454a5f",
+    "transactionHash": "0x7634f637172015ae3af25600c2d9c002ccb66a0b129b280af17efa276d5d2663",
+    "logs": [
+      {
+        "transactionIndex": 5,
+        "blockNumber": 25319031,
+        "transactionHash": "0x7634f637172015ae3af25600c2d9c002ccb66a0b129b280af17efa276d5d2663",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x000000000000000000000000afe87013dc96ede1e116a288d80fcaa0effe5fe5",
+          "0x000000000000000000000000be188d6641e8b680743a4815dfa0f6208038960f"
+        ],
+        "data": "0x00000000000000000000000000000000000000000000000000083732abf8c7e8000000000000000000000000000000000000000000000000479a4e244ca99993000000000000000000000000000000000000000000000813f262217bb6af6ff3000000000000000000000000000000000000000000000000479216f1a0b0d1ab000000000000000000000000000000000000000000000813f26a58ae62a837db",
+        "logIndex": 12,
+        "blockHash": "0x44a4a505a922895323977eab8196f458758dd06f13e5c78741a896fc43454a5f"
+      }
+    ],
+    "blockNumber": 25319031,
+    "cumulativeGasUsed": "2686706",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xbEA7c25b7826C0c0A3A22d7303561590967FCb9C"
+  ],
+  "solcInputHash": "98677f32543e021ed724a7a87aae15c4",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.6+commit.11564f7e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract TellerAS\",\"name\":\"_tellerAS\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"NotPayable\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"}],\"name\":\"MarketCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"SetMarketURI\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"lenderAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"expirationTime\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"attestLender\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_initialOwner\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_requireLenderAttestation\",\"type\":\"bool\"},{\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"}],\"name\":\"createMarket\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"}],\"name\":\"getAllVerifiedLendersForMarket\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"}],\"name\":\"getMarketOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"}],\"name\":\"getMarketURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isPayable\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"lenderAddress\",\"type\":\"address\"}],\"name\":\"isVerifiedLender\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lenderAttestationSchemaId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"marketCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"schema\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"attestor\",\"type\":\"address\"}],\"name\":\"resolve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"setMarketURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tellerAS\",\"outputs\":[{\"internalType\":\"contract TellerAS\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"marketId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferMarketOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"attestLender(uint256,address,uint256,uint8,bytes32,bytes32)\":{\"details\":\"The signature must match that of the market owner.\",\"params\":{\"lenderAddress\":\"The address of the lender to add to the market.\",\"marketId\":\"The market ID to add a lender to.\",\"r\":\"Signature value\",\"s\":\"Signature value\",\"v\":\"Signature value\"}},\"createMarket(address,bool,string)\":{\"params\":{\"_initialOwner\":\"Address who will initially own the market.\",\"_requireLenderAttestation\":\"Boolean that indicates if lenders require attestation to join market.\",\"_uri\":\"URI string to get metadata details about the market.\"}},\"getAllVerifiedLendersForMarket(uint256)\":{\"params\":{\"marketId\":\"The ID of a market.\"},\"returns\":{\"_0\":\"Array of addresses that have been added to a market.\"}},\"getMarketOwner(uint256)\":{\"params\":{\"marketId\":\"The ID of a market.\"},\"returns\":{\"_0\":\"The address of a market's owner.\"}},\"getMarketURI(uint256)\":{\"params\":{\"marketId\":\"The ID of a market.\"},\"returns\":{\"_0\":\"URI of a market's metadata.\"}},\"isPayable()\":{\"details\":\"Returns whether the resolver supports ETH transfers\"},\"isVerifiedLender(uint256,address)\":{\"params\":{\"lenderAddress\":\"Address to check.\",\"marketId\":\"The ID of a market.\"},\"returns\":{\"_0\":\"Boolean indicating if a lender has been added to a market.\"}},\"resolve(address,bytes,bytes,uint256,address)\":{\"details\":\"This function must only be called by the `attestLender` function above.\",\"params\":{\"\":\"@param attestor Market owner's address who signed the attestation.\",\"data\":\"Data the must include the market ID and lender's address\",\"recipient\":\"Lender's address who is being attested.\",\"schema\":\"The schema used for the attestation.\"},\"returns\":{\"_0\":\"Boolean indicating the attestation was successful.\"}},\"setMarketURI(uint256,string)\":{\"params\":{\"marketId\":\"The ID of a market.\",\"uri\":\"A URI that points to a market's metadata.\"}},\"transferMarketOwnership(uint256,address)\":{\"params\":{\"marketId\":\"The ID of a market.\",\"newOwner\":\"Address of the new market owner. Requirements: - The caller must by the current owner.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"attestLender(uint256,address,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Adds a lender to a market via delegated attestation.\"},\"createMarket(address,bool,string)\":{\"notice\":\"Creates a new market.\"},\"getAllVerifiedLendersForMarket(uint256)\":{\"notice\":\"Gets addresses of all attested lenders\"},\"getMarketOwner(uint256)\":{\"notice\":\"Gets the address of a market's owner.\"},\"getMarketURI(uint256)\":{\"notice\":\"Gets the metadata URI of a market.\"},\"isVerifiedLender(uint256,address)\":{\"notice\":\"Checks if a lender has been attested and added to a market.\"},\"resolve(address,bytes,bytes,uint256,address)\":{\"notice\":\"Verifies an attestation is valid.\"},\"setMarketURI(uint256,string)\":{\"notice\":\"Sets the metadata URI for a market.\"},\"transferMarketOwnership(uint256,address)\":{\"notice\":\"Transfers ownership of a marketplace.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/MarketRegistry.sol\":\"MarketRegistry\"},\"evmVersion\":\"berlin\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/proxy/utils/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.0 (proxy/utils/Initializable.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since a proxied contract can't have a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {ERC1967Proxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n *\\n * [CAUTION]\\n * ====\\n * Avoid leaving a contract uninitialized.\\n *\\n * An uninitialized contract can be taken over by an attacker. This applies to both a proxy and its implementation\\n * contract, which may impact the proxy. To initialize the implementation contract, you can either invoke the\\n * initializer manually, or you can include a constructor to automatically mark it as initialized when it is deployed:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * /// @custom:oz-upgrades-unsafe-allow constructor\\n * constructor() initializer {}\\n * ```\\n * ====\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     */\\n    bool private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Modifier to protect an initializer function from being invoked twice.\\n     */\\n    modifier initializer() {\\n        require(_initializing || !_initialized, \\\"Initializable: contract is already initialized\\\");\\n\\n        bool isTopLevelCall = !_initializing;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n            _initialized = true;\\n        }\\n\\n        _;\\n\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x6287586f5e4a103c89d4dda41406136cdf283cc625bd1ebfdf1468aae5bfe449\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.0 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0x7736c187e6f1358c1ea9350a2a21aa8528dec1c2f43b374a9067465a3a51f5d3\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/structs/EnumerableSet.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.0 (utils/structs/EnumerableSet.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Library for managing\\n * https://en.wikipedia.org/wiki/Set_(abstract_data_type)[sets] of primitive\\n * types.\\n *\\n * Sets have the following properties:\\n *\\n * - Elements are added, removed, and checked for existence in constant time\\n * (O(1)).\\n * - Elements are enumerated in O(n). No guarantees are made on the ordering.\\n *\\n * ```\\n * contract Example {\\n *     // Add the library methods\\n *     using EnumerableSet for EnumerableSet.AddressSet;\\n *\\n *     // Declare a set state variable\\n *     EnumerableSet.AddressSet private mySet;\\n * }\\n * ```\\n *\\n * As of v3.3.0, sets of type `bytes32` (`Bytes32Set`), `address` (`AddressSet`)\\n * and `uint256` (`UintSet`) are supported.\\n */\\nlibrary EnumerableSet {\\n    // To implement this library for multiple types with as little code\\n    // repetition as possible, we write it in terms of a generic Set type with\\n    // bytes32 values.\\n    // The Set implementation uses private functions, and user-facing\\n    // implementations (such as AddressSet) are just wrappers around the\\n    // underlying Set.\\n    // This means that we can only create new EnumerableSets for types that fit\\n    // in bytes32.\\n\\n    struct Set {\\n        // Storage of set values\\n        bytes32[] _values;\\n        // Position of the value in the `values` array, plus 1 because index 0\\n        // means a value is not in the set.\\n        mapping(bytes32 => uint256) _indexes;\\n    }\\n\\n    /**\\n     * @dev Add a value to a set. O(1).\\n     *\\n     * Returns true if the value was added to the set, that is if it was not\\n     * already present.\\n     */\\n    function _add(Set storage set, bytes32 value) private returns (bool) {\\n        if (!_contains(set, value)) {\\n            set._values.push(value);\\n            // The value is stored at length-1, but we add 1 to all indexes\\n            // and use 0 as a sentinel value\\n            set._indexes[value] = set._values.length;\\n            return true;\\n        } else {\\n            return false;\\n        }\\n    }\\n\\n    /**\\n     * @dev Removes a value from a set. O(1).\\n     *\\n     * Returns true if the value was removed from the set, that is if it was\\n     * present.\\n     */\\n    function _remove(Set storage set, bytes32 value) private returns (bool) {\\n        // We read and store the value's index to prevent multiple reads from the same storage slot\\n        uint256 valueIndex = set._indexes[value];\\n\\n        if (valueIndex != 0) {\\n            // Equivalent to contains(set, value)\\n            // To delete an element from the _values array in O(1), we swap the element to delete with the last one in\\n            // the array, and then remove the last element (sometimes called as 'swap and pop').\\n            // This modifies the order of the array, as noted in {at}.\\n\\n            uint256 toDeleteIndex = valueIndex - 1;\\n            uint256 lastIndex = set._values.length - 1;\\n\\n            if (lastIndex != toDeleteIndex) {\\n                bytes32 lastvalue = set._values[lastIndex];\\n\\n                // Move the last value to the index where the value to delete is\\n                set._values[toDeleteIndex] = lastvalue;\\n                // Update the index for the moved value\\n                set._indexes[lastvalue] = valueIndex; // Replace lastvalue's index to valueIndex\\n            }\\n\\n            // Delete the slot where the moved value was stored\\n            set._values.pop();\\n\\n            // Delete the index for the deleted slot\\n            delete set._indexes[value];\\n\\n            return true;\\n        } else {\\n            return false;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns true if the value is in the set. O(1).\\n     */\\n    function _contains(Set storage set, bytes32 value) private view returns (bool) {\\n        return set._indexes[value] != 0;\\n    }\\n\\n    /**\\n     * @dev Returns the number of values on the set. O(1).\\n     */\\n    function _length(Set storage set) private view returns (uint256) {\\n        return set._values.length;\\n    }\\n\\n    /**\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\n     *\\n     * Note that there are no guarantees on the ordering of values inside the\\n     * array, and it may change when more values are added or removed.\\n     *\\n     * Requirements:\\n     *\\n     * - `index` must be strictly less than {length}.\\n     */\\n    function _at(Set storage set, uint256 index) private view returns (bytes32) {\\n        return set._values[index];\\n    }\\n\\n    /**\\n     * @dev Return the entire set in an array\\n     *\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\n     */\\n    function _values(Set storage set) private view returns (bytes32[] memory) {\\n        return set._values;\\n    }\\n\\n    // Bytes32Set\\n\\n    struct Bytes32Set {\\n        Set _inner;\\n    }\\n\\n    /**\\n     * @dev Add a value to a set. O(1).\\n     *\\n     * Returns true if the value was added to the set, that is if it was not\\n     * already present.\\n     */\\n    function add(Bytes32Set storage set, bytes32 value) internal returns (bool) {\\n        return _add(set._inner, value);\\n    }\\n\\n    /**\\n     * @dev Removes a value from a set. O(1).\\n     *\\n     * Returns true if the value was removed from the set, that is if it was\\n     * present.\\n     */\\n    function remove(Bytes32Set storage set, bytes32 value) internal returns (bool) {\\n        return _remove(set._inner, value);\\n    }\\n\\n    /**\\n     * @dev Returns true if the value is in the set. O(1).\\n     */\\n    function contains(Bytes32Set storage set, bytes32 value) internal view returns (bool) {\\n        return _contains(set._inner, value);\\n    }\\n\\n    /**\\n     * @dev Returns the number of values in the set. O(1).\\n     */\\n    function length(Bytes32Set storage set) internal view returns (uint256) {\\n        return _length(set._inner);\\n    }\\n\\n    /**\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\n     *\\n     * Note that there are no guarantees on the ordering of values inside the\\n     * array, and it may change when more values are added or removed.\\n     *\\n     * Requirements:\\n     *\\n     * - `index` must be strictly less than {length}.\\n     */\\n    function at(Bytes32Set storage set, uint256 index) internal view returns (bytes32) {\\n        return _at(set._inner, index);\\n    }\\n\\n    /**\\n     * @dev Return the entire set in an array\\n     *\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\n     */\\n    function values(Bytes32Set storage set) internal view returns (bytes32[] memory) {\\n        return _values(set._inner);\\n    }\\n\\n    // AddressSet\\n\\n    struct AddressSet {\\n        Set _inner;\\n    }\\n\\n    /**\\n     * @dev Add a value to a set. O(1).\\n     *\\n     * Returns true if the value was added to the set, that is if it was not\\n     * already present.\\n     */\\n    function add(AddressSet storage set, address value) internal returns (bool) {\\n        return _add(set._inner, bytes32(uint256(uint160(value))));\\n    }\\n\\n    /**\\n     * @dev Removes a value from a set. O(1).\\n     *\\n     * Returns true if the value was removed from the set, that is if it was\\n     * present.\\n     */\\n    function remove(AddressSet storage set, address value) internal returns (bool) {\\n        return _remove(set._inner, bytes32(uint256(uint160(value))));\\n    }\\n\\n    /**\\n     * @dev Returns true if the value is in the set. O(1).\\n     */\\n    function contains(AddressSet storage set, address value) internal view returns (bool) {\\n        return _contains(set._inner, bytes32(uint256(uint160(value))));\\n    }\\n\\n    /**\\n     * @dev Returns the number of values in the set. O(1).\\n     */\\n    function length(AddressSet storage set) internal view returns (uint256) {\\n        return _length(set._inner);\\n    }\\n\\n    /**\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\n     *\\n     * Note that there are no guarantees on the ordering of values inside the\\n     * array, and it may change when more values are added or removed.\\n     *\\n     * Requirements:\\n     *\\n     * - `index` must be strictly less than {length}.\\n     */\\n    function at(AddressSet storage set, uint256 index) internal view returns (address) {\\n        return address(uint160(uint256(_at(set._inner, index))));\\n    }\\n\\n    /**\\n     * @dev Return the entire set in an array\\n     *\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\n     */\\n    function values(AddressSet storage set) internal view returns (address[] memory) {\\n        bytes32[] memory store = _values(set._inner);\\n        address[] memory result;\\n\\n        assembly {\\n            result := store\\n        }\\n\\n        return result;\\n    }\\n\\n    // UintSet\\n\\n    struct UintSet {\\n        Set _inner;\\n    }\\n\\n    /**\\n     * @dev Add a value to a set. O(1).\\n     *\\n     * Returns true if the value was added to the set, that is if it was not\\n     * already present.\\n     */\\n    function add(UintSet storage set, uint256 value) internal returns (bool) {\\n        return _add(set._inner, bytes32(value));\\n    }\\n\\n    /**\\n     * @dev Removes a value from a set. O(1).\\n     *\\n     * Returns true if the value was removed from the set, that is if it was\\n     * present.\\n     */\\n    function remove(UintSet storage set, uint256 value) internal returns (bool) {\\n        return _remove(set._inner, bytes32(value));\\n    }\\n\\n    /**\\n     * @dev Returns true if the value is in the set. O(1).\\n     */\\n    function contains(UintSet storage set, uint256 value) internal view returns (bool) {\\n        return _contains(set._inner, bytes32(value));\\n    }\\n\\n    /**\\n     * @dev Returns the number of values on the set. O(1).\\n     */\\n    function length(UintSet storage set) internal view returns (uint256) {\\n        return _length(set._inner);\\n    }\\n\\n    /**\\n     * @dev Returns the value stored at position `index` in the set. O(1).\\n     *\\n     * Note that there are no guarantees on the ordering of values inside the\\n     * array, and it may change when more values are added or removed.\\n     *\\n     * Requirements:\\n     *\\n     * - `index` must be strictly less than {length}.\\n     */\\n    function at(UintSet storage set, uint256 index) internal view returns (uint256) {\\n        return uint256(_at(set._inner, index));\\n    }\\n\\n    /**\\n     * @dev Return the entire set in an array\\n     *\\n     * WARNING: This operation will copy the entire storage to memory, which can be quite expensive. This is designed\\n     * to mostly be used by view accessors that are queried without any gas fees. Developers should keep in mind that\\n     * this function has an unbounded cost, and using it as part of a state-changing function may render the function\\n     * uncallable if the set grows to a point where copying to memory consumes too much gas to fit in a block.\\n     */\\n    function values(UintSet storage set) internal view returns (uint256[] memory) {\\n        bytes32[] memory store = _values(set._inner);\\n        uint256[] memory result;\\n\\n        assembly {\\n            result := store\\n        }\\n\\n        return result;\\n    }\\n}\\n\",\"keccak256\":\"0xfac19be5f0d198ac556731a5589a4ae1c0c1622437d0b6b53b2cf3f317071acd\",\"license\":\"MIT\"},\"contracts/EAS/TellerAS.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n// SPDX-License-Identifier: MIT\\n\\nimport \\\"../Types.sol\\\";\\nimport \\\"../interfaces/IEAS.sol\\\";\\nimport \\\"../interfaces/IASRegistry.sol\\\";\\n\\n/**\\n * @title TellerAS - Teller Attestation Service - based on EAS - Ethereum Attestation Service\\n */\\ncontract TellerAS is IEAS {\\n    error AccessDenied();\\n    error AlreadyRevoked();\\n    error InvalidAttestation();\\n    error InvalidExpirationTime();\\n    error InvalidOffset();\\n    error InvalidRegistry();\\n    error InvalidSchema();\\n    error InvalidVerifier();\\n    error NotFound();\\n    error NotPayable();\\n\\n    string public constant VERSION = \\\"0.8\\\";\\n\\n    // A terminator used when concatenating and hashing multiple fields.\\n    string private constant HASH_TERMINATOR = \\\"@\\\";\\n\\n    // The AS global registry.\\n    IASRegistry private immutable _asRegistry;\\n\\n    // The EIP712 verifier used to verify signed attestations.\\n    IEASEIP712Verifier private immutable _eip712Verifier;\\n\\n    // A mapping between attestations and their related attestations.\\n    mapping(bytes32 => bytes32[]) private _relatedAttestations;\\n\\n    // A mapping between an account and its received attestations.\\n    mapping(address => mapping(bytes32 => bytes32[]))\\n        private _receivedAttestations;\\n\\n    // A mapping between an account and its sent attestations.\\n    mapping(address => mapping(bytes32 => bytes32[])) private _sentAttestations;\\n\\n    // A mapping between a schema and its attestations.\\n    mapping(bytes32 => bytes32[]) private _schemaAttestations;\\n\\n    // The global mapping between attestations and their UUIDs.\\n    mapping(bytes32 => Attestation) private _db;\\n\\n    // The global counter for the total number of attestations.\\n    uint256 private _attestationsCount;\\n\\n    bytes32 private _lastUUID;\\n\\n    /**\\n     * @dev Creates a new EAS instance.\\n     *\\n     * @param registry The address of the global AS registry.\\n     * @param verifier The address of the EIP712 verifier.\\n     */\\n    constructor(IASRegistry registry, IEASEIP712Verifier verifier) {\\n        if (address(registry) == address(0x0)) {\\n            revert InvalidRegistry();\\n        }\\n\\n        if (address(verifier) == address(0x0)) {\\n            revert InvalidVerifier();\\n        }\\n\\n        _asRegistry = registry;\\n        _eip712Verifier = verifier;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getASRegistry() external view override returns (IASRegistry) {\\n        return _asRegistry;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getEIP712Verifier()\\n        external\\n        view\\n        override\\n        returns (IEASEIP712Verifier)\\n    {\\n        return _eip712Verifier;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getAttestationsCount() external view override returns (uint256) {\\n        return _attestationsCount;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function attest(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 expirationTime,\\n        bytes32 refUUID,\\n        bytes calldata data\\n    ) public payable virtual override returns (bytes32) {\\n        return\\n            _attest(\\n                recipient,\\n                schema,\\n                expirationTime,\\n                refUUID,\\n                data,\\n                msg.sender\\n            );\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function attestByDelegation(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 expirationTime,\\n        bytes32 refUUID,\\n        bytes calldata data,\\n        address attester,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) public payable virtual override returns (bytes32) {\\n        _eip712Verifier.attest(\\n            recipient,\\n            schema,\\n            expirationTime,\\n            refUUID,\\n            data,\\n            attester,\\n            v,\\n            r,\\n            s\\n        );\\n\\n        return\\n            _attest(recipient, schema, expirationTime, refUUID, data, attester);\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function revoke(bytes32 uuid) public virtual override {\\n        return _revoke(uuid, msg.sender);\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function revokeByDelegation(\\n        bytes32 uuid,\\n        address attester,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) public virtual override {\\n        _eip712Verifier.revoke(uuid, attester, v, r, s);\\n\\n        _revoke(uuid, attester);\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getAttestation(bytes32 uuid)\\n        external\\n        view\\n        override\\n        returns (Attestation memory)\\n    {\\n        return _db[uuid];\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function isAttestationValid(bytes32 uuid)\\n        public\\n        view\\n        override\\n        returns (bool)\\n    {\\n        return _db[uuid].uuid != 0;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function isAttestationActive(bytes32 uuid)\\n        public\\n        view\\n        override\\n        returns (bool)\\n    {\\n        return\\n            isAttestationValid(uuid) &&\\n            _db[uuid].expirationTime >= block.timestamp &&\\n            _db[uuid].revocationTime == 0;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getReceivedAttestationUUIDs(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view override returns (bytes32[] memory) {\\n        return\\n            _sliceUUIDs(\\n                _receivedAttestations[recipient][schema],\\n                start,\\n                length,\\n                reverseOrder\\n            );\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getReceivedAttestationUUIDsCount(address recipient, bytes32 schema)\\n        external\\n        view\\n        override\\n        returns (uint256)\\n    {\\n        return _receivedAttestations[recipient][schema].length;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getSentAttestationUUIDs(\\n        address attester,\\n        bytes32 schema,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view override returns (bytes32[] memory) {\\n        return\\n            _sliceUUIDs(\\n                _sentAttestations[attester][schema],\\n                start,\\n                length,\\n                reverseOrder\\n            );\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getSentAttestationUUIDsCount(address recipient, bytes32 schema)\\n        external\\n        view\\n        override\\n        returns (uint256)\\n    {\\n        return _sentAttestations[recipient][schema].length;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getRelatedAttestationUUIDs(\\n        bytes32 uuid,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view override returns (bytes32[] memory) {\\n        return\\n            _sliceUUIDs(\\n                _relatedAttestations[uuid],\\n                start,\\n                length,\\n                reverseOrder\\n            );\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getRelatedAttestationUUIDsCount(bytes32 uuid)\\n        external\\n        view\\n        override\\n        returns (uint256)\\n    {\\n        return _relatedAttestations[uuid].length;\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getSchemaAttestationUUIDs(\\n        bytes32 schema,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view override returns (bytes32[] memory) {\\n        return\\n            _sliceUUIDs(\\n                _schemaAttestations[schema],\\n                start,\\n                length,\\n                reverseOrder\\n            );\\n    }\\n\\n    /**\\n     * @inheritdoc IEAS\\n     */\\n    function getSchemaAttestationUUIDsCount(bytes32 schema)\\n        external\\n        view\\n        override\\n        returns (uint256)\\n    {\\n        return _schemaAttestations[schema].length;\\n    }\\n\\n    /**\\n     * @dev Attests to a specific AS.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     * @param expirationTime The expiration time of the attestation.\\n     * @param refUUID An optional related attestation's UUID.\\n     * @param data Additional custom data.\\n     * @param attester The attesting account.\\n     *\\n     * @return The UUID of the new attestation.\\n     */\\n    function _attest(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 expirationTime,\\n        bytes32 refUUID,\\n        bytes calldata data,\\n        address attester\\n    ) private returns (bytes32) {\\n        if (expirationTime <= block.timestamp) {\\n            revert InvalidExpirationTime();\\n        }\\n\\n        IASRegistry.ASRecord memory asRecord = _asRegistry.getAS(schema);\\n        if (asRecord.uuid == EMPTY_UUID) {\\n            revert InvalidSchema();\\n        }\\n\\n        IASResolver resolver = asRecord.resolver;\\n        if (address(resolver) != address(0x0)) {\\n            if (msg.value != 0 && !resolver.isPayable()) {\\n                revert NotPayable();\\n            }\\n\\n            if (\\n                !resolver.resolve{ value: msg.value }(\\n                    recipient,\\n                    asRecord.schema,\\n                    data,\\n                    expirationTime,\\n                    attester\\n                )\\n            ) {\\n                revert InvalidAttestation();\\n            }\\n        }\\n\\n        Attestation memory attestation = Attestation({\\n            uuid: EMPTY_UUID,\\n            schema: schema,\\n            recipient: recipient,\\n            attester: attester,\\n            time: block.timestamp,\\n            expirationTime: expirationTime,\\n            revocationTime: 0,\\n            refUUID: refUUID,\\n            data: data\\n        });\\n\\n        _lastUUID = _getUUID(attestation);\\n        attestation.uuid = _lastUUID;\\n\\n        _receivedAttestations[recipient][schema].push(_lastUUID);\\n        _sentAttestations[attester][schema].push(_lastUUID);\\n        _schemaAttestations[schema].push(_lastUUID);\\n\\n        _db[_lastUUID] = attestation;\\n        _attestationsCount++;\\n\\n        if (refUUID != 0) {\\n            if (!isAttestationValid(refUUID)) {\\n                revert NotFound();\\n            }\\n\\n            _relatedAttestations[refUUID].push(_lastUUID);\\n        }\\n\\n        emit Attested(recipient, attester, _lastUUID, schema);\\n\\n        return _lastUUID;\\n    }\\n\\n    function getLastUUID() external view returns (bytes32) {\\n        return _lastUUID;\\n    }\\n\\n    /**\\n     * @dev Revokes an existing attestation to a specific AS.\\n     *\\n     * @param uuid The UUID of the attestation to revoke.\\n     * @param attester The attesting account.\\n     */\\n    function _revoke(bytes32 uuid, address attester) private {\\n        Attestation storage attestation = _db[uuid];\\n        if (attestation.uuid == EMPTY_UUID) {\\n            revert NotFound();\\n        }\\n\\n        if (attestation.attester != attester) {\\n            revert AccessDenied();\\n        }\\n\\n        if (attestation.revocationTime != 0) {\\n            revert AlreadyRevoked();\\n        }\\n\\n        attestation.revocationTime = block.timestamp;\\n\\n        emit Revoked(attestation.recipient, attester, uuid, attestation.schema);\\n    }\\n\\n    /**\\n     * @dev Calculates a UUID for a given attestation.\\n     *\\n     * @param attestation The input attestation.\\n     *\\n     * @return Attestation UUID.\\n     */\\n    function _getUUID(Attestation memory attestation)\\n        private\\n        view\\n        returns (bytes32)\\n    {\\n        return\\n            keccak256(\\n                abi.encodePacked(\\n                    attestation.schema,\\n                    attestation.recipient,\\n                    attestation.attester,\\n                    attestation.time,\\n                    attestation.expirationTime,\\n                    attestation.data,\\n                    HASH_TERMINATOR,\\n                    _attestationsCount\\n                )\\n            );\\n    }\\n\\n    /**\\n     * @dev Returns a slice in an array of attestation UUIDs.\\n     *\\n     * @param uuids The array of attestation UUIDs.\\n     * @param start The offset to start from.\\n     * @param length The number of total members to retrieve.\\n     * @param reverseOrder Whether the offset starts from the end and the data is returned in reverse.\\n     *\\n     * @return An array of attestation UUIDs.\\n     */\\n    function _sliceUUIDs(\\n        bytes32[] memory uuids,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) private pure returns (bytes32[] memory) {\\n        uint256 attestationsLength = uuids.length;\\n        if (attestationsLength == 0) {\\n            return new bytes32[](0);\\n        }\\n\\n        if (start >= attestationsLength) {\\n            revert InvalidOffset();\\n        }\\n\\n        uint256 len = length;\\n        if (attestationsLength < start + length) {\\n            len = attestationsLength - start;\\n        }\\n\\n        bytes32[] memory res = new bytes32[](len);\\n\\n        for (uint256 i = 0; i < len; ++i) {\\n            res[i] = uuids[\\n                reverseOrder ? attestationsLength - (start + i + 1) : start + i\\n            ];\\n        }\\n\\n        return res;\\n    }\\n}\\n\",\"keccak256\":\"0x01848d2b9b7815144137d3ad654ac3246dd740f03e9e951ecf70374d71f8e354\",\"license\":\"MIT\"},\"contracts/EAS/TellerASResolver.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n// SPDX-License-Identifier: MIT\\n\\nimport \\\"../interfaces/IASResolver.sol\\\";\\n\\n/**\\n * @title A base resolver contract\\n */\\nabstract contract TellerASResolver is IASResolver {\\n    error NotPayable();\\n\\n    function isPayable() public pure virtual override returns (bool) {\\n        return false;\\n    }\\n\\n    receive() external payable virtual {\\n        if (!isPayable()) {\\n            revert NotPayable();\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x8002d1725fd711dacd001e06d98fe2afc4814d2939d06df70c5b3ffcf5ec7f15\",\"license\":\"MIT\"},\"contracts/MarketRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\n// Contracts\\nimport \\\"./EAS/TellerAS.sol\\\";\\nimport \\\"./EAS/TellerASResolver.sol\\\";\\n\\n// Interfaces\\nimport \\\"./interfaces/IMarketRegistry.sol\\\";\\n\\n// Libraries\\nimport {\\n    EnumerableSet\\n} from \\\"@openzeppelin/contracts/utils/structs/EnumerableSet.sol\\\";\\nimport \\\"@openzeppelin/contracts/proxy/utils/Initializable.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\ncontract MarketRegistry is\\n    IMarketRegistry,\\n    Initializable,\\n    Context,\\n    TellerASResolver\\n{\\n    using EnumerableSet for EnumerableSet.AddressSet;\\n\\n    /* Constant Variables */\\n\\n    TellerAS public immutable tellerAS;\\n\\n    /* Storage Variables */\\n\\n    struct Marketplace {\\n        address owner;\\n        string metadataURI;\\n        bool lenderAttestationRequired;\\n        EnumerableSet.AddressSet verifiedLendersForMarket;\\n        mapping(address => bytes32) lenderAttestationIds;\\n    }\\n\\n    bytes32 public lenderAttestationSchemaId;\\n    mapping(uint256 => Marketplace) internal markets;\\n    mapping(bytes32 => uint256) internal _uriToId;\\n    uint256 public marketCount;\\n    bool private _isAttesting;\\n\\n    /* Modifiers */\\n\\n    modifier ownsMarket(uint256 marketId) {\\n        require(markets[marketId].owner == msg.sender, \\\"Not the owner\\\");\\n        _;\\n    }\\n\\n    modifier attestingLender() {\\n        _isAttesting = true;\\n        _;\\n        _isAttesting = false;\\n    }\\n\\n    /* Events */\\n\\n    event MarketCreated(address indexed owner, uint256 marketId);\\n    event SetMarketURI(uint256 marketId, string uri);\\n\\n    /* Constructor */\\n\\n    constructor(TellerAS _tellerAS) {\\n        tellerAS = _tellerAS;\\n    }\\n\\n    /* External Functions */\\n\\n    function initialize() external initializer {\\n        lenderAttestationSchemaId = tellerAS.getASRegistry().register(\\n            \\\"(uint256 marketId, address lenderAddress)\\\",\\n            this\\n        );\\n    }\\n\\n    /**\\n     * @notice Creates a new market.\\n     * @param _initialOwner Address who will initially own the market.\\n     * @param _requireLenderAttestation Boolean that indicates if lenders require attestation to join market.\\n     * @param _uri URI string to get metadata details about the market.\\n     */\\n    function createMarket(\\n        address _initialOwner,\\n        bool _requireLenderAttestation,\\n        string calldata _uri\\n    ) external {\\n        // Increment market ID counter\\n        uint256 marketId = ++marketCount;\\n\\n        // Set URI and reverse lookup\\n        _setMarketUri(marketId, _uri);\\n\\n        // Set the market owner\\n        markets[marketId].owner = _initialOwner;\\n        // Check if market requires lender attestation to join\\n        if (_requireLenderAttestation)\\n            markets[marketId].lenderAttestationRequired = true;\\n\\n        emit MarketCreated(_initialOwner, marketId);\\n    }\\n\\n    /**\\n     * @notice Adds a lender to a market via delegated attestation.\\n     * @dev The signature must match that of the market owner.\\n     * @param marketId The market ID to add a lender to.\\n     * @param lenderAddress The address of the lender to add to the market.\\n     * @param v Signature value\\n     * @param r Signature value\\n     * @param s Signature value\\n     */\\n    function attestLender(\\n        uint256 marketId,\\n        address lenderAddress,\\n        uint256 expirationTime,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external attestingLender {\\n        require(marketId > 0, \\\"Invalid market ID\\\");\\n\\n        address attestor = markets[marketId].owner;\\n        require(markets[marketId].owner != address(0), \\\"Market owner not set\\\");\\n\\n        // Check if market requires lender attestation\\n        require(\\n            markets[marketId].lenderAttestationRequired,\\n            \\\"Lender attestation not required\\\"\\n        );\\n\\n        // Submit attestation for lender to join a market (attestation must be signed by market owner)\\n        bytes32 uuid = tellerAS.attestByDelegation(\\n            lenderAddress,\\n            lenderAttestationSchemaId,\\n            expirationTime,\\n            0,\\n            abi.encode(marketId, lenderAddress),\\n            attestor,\\n            v,\\n            r,\\n            s\\n        );\\n\\n        // Store the lender attestation ID for the market ID\\n        markets[marketId].lenderAttestationIds[lenderAddress] = uuid;\\n        // Add lender address to market set\\n        markets[marketId].verifiedLendersForMarket.add(lenderAddress);\\n    }\\n\\n    /**\\n     * @notice Verifies an attestation is valid.\\n     * @dev This function must only be called by the `attestLender` function above.\\n     * @param recipient Lender's address who is being attested.\\n     * @param schema The schema used for the attestation.\\n     * @param data Data the must include the market ID and lender's address\\n     * @param\\n     * @param attestor Market owner's address who signed the attestation.\\n     * @return Boolean indicating the attestation was successful.\\n     */\\n    function resolve(\\n        address recipient,\\n        bytes calldata schema,\\n        bytes calldata data,\\n        uint256, /* expirationTime */\\n        address attestor\\n    ) external payable override returns (bool) {\\n        // Ensures an attestation is not valid if its not called by `attestLender`\\n        if (!_isAttesting) return false;\\n\\n        bytes32 attestationSchema = keccak256(\\n            abi.encodePacked(schema, address(this))\\n        );\\n        (uint256 marketId, address lenderAddress) = abi.decode(\\n            data,\\n            (uint256, address)\\n        );\\n        return\\n            lenderAttestationSchemaId == attestationSchema &&\\n            recipient == lenderAddress &&\\n            attestor == markets[marketId].owner;\\n    }\\n\\n    /**\\n     * @notice Transfers ownership of a marketplace.\\n     * @param marketId The ID of a market.\\n     * @param newOwner Address of the new market owner.\\n     *\\n     * Requirements:\\n     * - The caller must by the current owner.\\n     */\\n    function transferMarketOwnership(uint256 marketId, address newOwner)\\n        public\\n        ownsMarket(marketId)\\n    {\\n        markets[marketId].owner = newOwner;\\n    }\\n\\n    /**\\n     * @notice Sets the metadata URI for a market.\\n     * @param marketId The ID of a market.\\n     * @param uri A URI that points to a market's metadata.\\n     */\\n    function setMarketURI(uint256 marketId, string calldata uri)\\n        public\\n        ownsMarket(marketId)\\n    {\\n        _setMarketUri(marketId, uri);\\n    }\\n\\n    /**\\n     * @notice Gets the address of a market's owner.\\n     * @param marketId The ID of a market.\\n     * @return The address of a market's owner.\\n     */\\n    function getMarketOwner(uint256 marketId) public view returns (address) {\\n        return markets[marketId].owner;\\n    }\\n\\n    /**\\n     * @notice Gets the metadata URI of a market.\\n     * @param marketId The ID of a market.\\n     * @return URI of a market's metadata.\\n     */\\n    function getMarketURI(uint256 marketId)\\n        public\\n        view\\n        returns (string memory)\\n    {\\n        return markets[marketId].metadataURI;\\n    }\\n\\n    /**\\n     * @notice Checks if a lender has been attested and added to a market.\\n     * @param marketId The ID of a market.\\n     * @param lenderAddress Address to check.\\n     * @return Boolean indicating if a lender has been added to a market.\\n     */\\n    function isVerifiedLender(uint256 marketId, address lenderAddress)\\n        public\\n        view\\n        override\\n        returns (bool)\\n    {\\n        if (markets[marketId].lenderAttestationRequired) {\\n            return\\n                tellerAS.isAttestationActive(\\n                    markets[marketId].lenderAttestationIds[lenderAddress]\\n                );\\n        }\\n\\n        return true;\\n    }\\n\\n    /**\\n     * @notice Gets addresses of all attested lenders\\n     * @param marketId The ID of a market.\\n     * @return Array of addresses that have been added to a market.\\n     */\\n    function getAllVerifiedLendersForMarket(uint256 marketId)\\n        public\\n        view\\n        returns (address[] memory)\\n    {\\n        return markets[marketId].verifiedLendersForMarket.values();\\n    }\\n\\n    /* Internal Functions */\\n\\n    /**\\n     * @notice Sets the metadata URI for a market.\\n     * @param _marketId The ID of a market.\\n     * @param _uri A URI that points to a market's metadata.\\n     */\\n    function _setMarketUri(uint256 _marketId, string calldata _uri) internal {\\n        require(_marketId > 0, \\\"Market ID 0\\\");\\n\\n        // Check if URI is already used\\n        bytes32 uriId = keccak256(abi.encode(_uri));\\n        require(_uriToId[uriId] == 0, \\\"non-unique market URI\\\");\\n\\n        // Update market counter & store reverse lookup\\n        _uriToId[uriId] = _marketId;\\n        markets[_marketId].metadataURI = _uri;\\n\\n        emit SetMarketURI(_marketId, _uri);\\n    }\\n}\\n\",\"keccak256\":\"0xa2c18c06acc6ef8a2d56858a0c7ccb118f5b1280c22687a25b44316988bcba4a\",\"license\":\"MIT\"},\"contracts/Types.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n// SPDX-License-Identifier: MIT\\n\\n// A representation of an empty/uninitialized UUID.\\nbytes32 constant EMPTY_UUID = 0;\\n\",\"keccak256\":\"0x2e4bcf4a965f840193af8729251386c1826cd050411ba4a9e85984a2551fd2ff\",\"license\":\"MIT\"},\"contracts/interfaces/IASRegistry.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n// SPDX-License-Identifier: MIT\\n\\nimport \\\"./IASResolver.sol\\\";\\n\\n/**\\n * @title The global AS registry interface.\\n */\\ninterface IASRegistry {\\n    /**\\n     * @title A struct representing a record for a submitted AS (Attestation Schema).\\n     */\\n    struct ASRecord {\\n        // A unique identifier of the AS.\\n        bytes32 uuid;\\n        // Optional schema resolver.\\n        IASResolver resolver;\\n        // Auto-incrementing index for reference, assigned by the registry itself.\\n        uint256 index;\\n        // Custom specification of the AS (e.g., an ABI).\\n        bytes schema;\\n    }\\n\\n    /**\\n     * @dev Triggered when a new AS has been registered\\n     *\\n     * @param uuid The AS UUID.\\n     * @param index The AS index.\\n     * @param schema The AS schema.\\n     * @param resolver An optional AS schema resolver.\\n     * @param attester The address of the account used to register the AS.\\n     */\\n    event Registered(\\n        bytes32 indexed uuid,\\n        uint256 indexed index,\\n        bytes schema,\\n        IASResolver resolver,\\n        address attester\\n    );\\n\\n    /**\\n     * @dev Submits and reserve a new AS\\n     *\\n     * @param schema The AS data schema.\\n     * @param resolver An optional AS schema resolver.\\n     *\\n     * @return The UUID of the new AS.\\n     */\\n    function register(bytes calldata schema, IASResolver resolver)\\n        external\\n        returns (bytes32);\\n\\n    /**\\n     * @dev Returns an existing AS by UUID\\n     *\\n     * @param uuid The UUID of the AS to retrieve.\\n     *\\n     * @return The AS data members.\\n     */\\n    function getAS(bytes32 uuid) external view returns (ASRecord memory);\\n\\n    /**\\n     * @dev Returns the global counter for the total number of attestations\\n     *\\n     * @return The global counter for the total number of attestations.\\n     */\\n    function getASCount() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x74752921f592df45c8717d7084627e823b1dbc93bad7187cd3023c9690df7e60\",\"license\":\"MIT\"},\"contracts/interfaces/IASResolver.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n\\n// SPDX-License-Identifier: MIT\\n\\n/**\\n * @title The interface of an optional AS resolver.\\n */\\ninterface IASResolver {\\n    /**\\n     * @dev Returns whether the resolver supports ETH transfers\\n     */\\n    function isPayable() external pure returns (bool);\\n\\n    /**\\n     * @dev Resolves an attestation and verifier whether its data conforms to the spec.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The AS data schema.\\n     * @param data The actual attestation data.\\n     * @param expirationTime The expiration time of the attestation.\\n     * @param msgSender The sender of the original attestation message.\\n     *\\n     * @return Whether the data is valid according to the scheme.\\n     */\\n    function resolve(\\n        address recipient,\\n        bytes calldata schema,\\n        bytes calldata data,\\n        uint256 expirationTime,\\n        address msgSender\\n    ) external payable returns (bool);\\n}\\n\",\"keccak256\":\"0xfce671ea099d9f997a69c3447eb4a9c9693d37c5b97e43ada376e614e1c7cb61\",\"license\":\"MIT\"},\"contracts/interfaces/IEAS.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n// SPDX-License-Identifier: MIT\\n\\nimport \\\"./IASRegistry.sol\\\";\\nimport \\\"./IEASEIP712Verifier.sol\\\";\\n\\n/**\\n * @title EAS - Ethereum Attestation Service interface\\n */\\ninterface IEAS {\\n    /**\\n     * @dev A struct representing a single attestation.\\n     */\\n    struct Attestation {\\n        // A unique identifier of the attestation.\\n        bytes32 uuid;\\n        // A unique identifier of the AS.\\n        bytes32 schema;\\n        // The recipient of the attestation.\\n        address recipient;\\n        // The attester/sender of the attestation.\\n        address attester;\\n        // The time when the attestation was created (Unix timestamp).\\n        uint256 time;\\n        // The time when the attestation expires (Unix timestamp).\\n        uint256 expirationTime;\\n        // The time when the attestation was revoked (Unix timestamp).\\n        uint256 revocationTime;\\n        // The UUID of the related attestation.\\n        bytes32 refUUID;\\n        // Custom attestation data.\\n        bytes data;\\n    }\\n\\n    /**\\n     * @dev Triggered when an attestation has been made.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param attester The attesting account.\\n     * @param uuid The UUID the revoked attestation.\\n     * @param schema The UUID of the AS.\\n     */\\n    event Attested(\\n        address indexed recipient,\\n        address indexed attester,\\n        bytes32 uuid,\\n        bytes32 indexed schema\\n    );\\n\\n    /**\\n     * @dev Triggered when an attestation has been revoked.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param attester The attesting account.\\n     * @param schema The UUID of the AS.\\n     * @param uuid The UUID the revoked attestation.\\n     */\\n    event Revoked(\\n        address indexed recipient,\\n        address indexed attester,\\n        bytes32 uuid,\\n        bytes32 indexed schema\\n    );\\n\\n    /**\\n     * @dev Returns the address of the AS global registry.\\n     *\\n     * @return The address of the AS global registry.\\n     */\\n    function getASRegistry() external view returns (IASRegistry);\\n\\n    /**\\n     * @dev Returns the address of the EIP712 verifier used to verify signed attestations.\\n     *\\n     * @return The address of the EIP712 verifier used to verify signed attestations.\\n     */\\n    function getEIP712Verifier() external view returns (IEASEIP712Verifier);\\n\\n    /**\\n     * @dev Returns the global counter for the total number of attestations.\\n     *\\n     * @return The global counter for the total number of attestations.\\n     */\\n    function getAttestationsCount() external view returns (uint256);\\n\\n    /**\\n     * @dev Attests to a specific AS.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     * @param expirationTime The expiration time of the attestation.\\n     * @param refUUID An optional related attestation's UUID.\\n     * @param data Additional custom data.\\n     *\\n     * @return The UUID of the new attestation.\\n     */\\n    function attest(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 expirationTime,\\n        bytes32 refUUID,\\n        bytes calldata data\\n    ) external payable returns (bytes32);\\n\\n    /**\\n     * @dev Attests to a specific AS using a provided EIP712 signature.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     * @param expirationTime The expiration time of the attestation.\\n     * @param refUUID An optional related attestation's UUID.\\n     * @param data Additional custom data.\\n     * @param attester The attesting account.\\n     * @param v The recovery ID.\\n     * @param r The x-coordinate of the nonce R.\\n     * @param s The signature data.\\n     *\\n     * @return The UUID of the new attestation.\\n     */\\n    function attestByDelegation(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 expirationTime,\\n        bytes32 refUUID,\\n        bytes calldata data,\\n        address attester,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external payable returns (bytes32);\\n\\n    /**\\n     * @dev Revokes an existing attestation to a specific AS.\\n     *\\n     * @param uuid The UUID of the attestation to revoke.\\n     */\\n    function revoke(bytes32 uuid) external;\\n\\n    /**\\n     * @dev Attests to a specific AS using a provided EIP712 signature.\\n     *\\n     * @param uuid The UUID of the attestation to revoke.\\n     * @param attester The attesting account.\\n     * @param v The recovery ID.\\n     * @param r The x-coordinate of the nonce R.\\n     * @param s The signature data.\\n     */\\n    function revokeByDelegation(\\n        bytes32 uuid,\\n        address attester,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external;\\n\\n    /**\\n     * @dev Returns an existing attestation by UUID.\\n     *\\n     * @param uuid The UUID of the attestation to retrieve.\\n     *\\n     * @return The attestation data members.\\n     */\\n    function getAttestation(bytes32 uuid)\\n        external\\n        view\\n        returns (Attestation memory);\\n\\n    /**\\n     * @dev Checks whether an attestation exists.\\n     *\\n     * @param uuid The UUID of the attestation to retrieve.\\n     *\\n     * @return Whether an attestation exists.\\n     */\\n    function isAttestationValid(bytes32 uuid) external view returns (bool);\\n\\n    /**\\n     * @dev Checks whether an attestation is active.\\n     *\\n     * @param uuid The UUID of the attestation to retrieve.\\n     *\\n     * @return Whether an attestation is active.\\n     */\\n    function isAttestationActive(bytes32 uuid) external view returns (bool);\\n\\n    /**\\n     * @dev Returns all received attestation UUIDs.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     * @param start The offset to start from.\\n     * @param length The number of total members to retrieve.\\n     * @param reverseOrder Whether the offset starts from the end and the data is returned in reverse.\\n     *\\n     * @return An array of attestation UUIDs.\\n     */\\n    function getReceivedAttestationUUIDs(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view returns (bytes32[] memory);\\n\\n    /**\\n     * @dev Returns the number of received attestation UUIDs.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     *\\n     * @return The number of attestations.\\n     */\\n    function getReceivedAttestationUUIDsCount(address recipient, bytes32 schema)\\n        external\\n        view\\n        returns (uint256);\\n\\n    /**\\n     * @dev Returns all sent attestation UUIDs.\\n     *\\n     * @param attester The attesting account.\\n     * @param schema The UUID of the AS.\\n     * @param start The offset to start from.\\n     * @param length The number of total members to retrieve.\\n     * @param reverseOrder Whether the offset starts from the end and the data is returned in reverse.\\n     *\\n     * @return An array of attestation UUIDs.\\n     */\\n    function getSentAttestationUUIDs(\\n        address attester,\\n        bytes32 schema,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view returns (bytes32[] memory);\\n\\n    /**\\n     * @dev Returns the number of sent attestation UUIDs.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     *\\n     * @return The number of attestations.\\n     */\\n    function getSentAttestationUUIDsCount(address recipient, bytes32 schema)\\n        external\\n        view\\n        returns (uint256);\\n\\n    /**\\n     * @dev Returns all attestations related to a specific attestation.\\n     *\\n     * @param uuid The UUID of the attestation to retrieve.\\n     * @param start The offset to start from.\\n     * @param length The number of total members to retrieve.\\n     * @param reverseOrder Whether the offset starts from the end and the data is returned in reverse.\\n     *\\n     * @return An array of attestation UUIDs.\\n     */\\n    function getRelatedAttestationUUIDs(\\n        bytes32 uuid,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view returns (bytes32[] memory);\\n\\n    /**\\n     * @dev Returns the number of related attestation UUIDs.\\n     *\\n     * @param uuid The UUID of the attestation to retrieve.\\n     *\\n     * @return The number of related attestations.\\n     */\\n    function getRelatedAttestationUUIDsCount(bytes32 uuid)\\n        external\\n        view\\n        returns (uint256);\\n\\n    /**\\n     * @dev Returns all per-schema attestation UUIDs.\\n     *\\n     * @param schema The UUID of the AS.\\n     * @param start The offset to start from.\\n     * @param length The number of total members to retrieve.\\n     * @param reverseOrder Whether the offset starts from the end and the data is returned in reverse.\\n     *\\n     * @return An array of attestation UUIDs.\\n     */\\n    function getSchemaAttestationUUIDs(\\n        bytes32 schema,\\n        uint256 start,\\n        uint256 length,\\n        bool reverseOrder\\n    ) external view returns (bytes32[] memory);\\n\\n    /**\\n     * @dev Returns the number of per-schema  attestation UUIDs.\\n     *\\n     * @param schema The UUID of the AS.\\n     *\\n     * @return The number of attestations.\\n     */\\n    function getSchemaAttestationUUIDsCount(bytes32 schema)\\n        external\\n        view\\n        returns (uint256);\\n}\\n\",\"keccak256\":\"0x5db90829269f806ed14a6c638f38d4aac1fa0f85829b34a2fcddd5200261c148\",\"license\":\"MIT\"},\"contracts/interfaces/IEASEIP712Verifier.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n\\n// SPDX-License-Identifier: MIT\\n\\n/**\\n * @title EIP712 typed signatures verifier for EAS delegated attestations interface.\\n */\\ninterface IEASEIP712Verifier {\\n    /**\\n     * @dev Returns the current nonce per-account.\\n     *\\n     * @param account The requested accunt.\\n     *\\n     * @return The current nonce.\\n     */\\n    function getNonce(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Verifies signed attestation.\\n     *\\n     * @param recipient The recipient of the attestation.\\n     * @param schema The UUID of the AS.\\n     * @param expirationTime The expiration time of the attestation.\\n     * @param refUUID An optional related attestation's UUID.\\n     * @param data Additional custom data.\\n     * @param attester The attesting account.\\n     * @param v The recovery ID.\\n     * @param r The x-coordinate of the nonce R.\\n     * @param s The signature data.\\n     */\\n    function attest(\\n        address recipient,\\n        bytes32 schema,\\n        uint256 expirationTime,\\n        bytes32 refUUID,\\n        bytes calldata data,\\n        address attester,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external;\\n\\n    /**\\n     * @dev Verifies signed revocations.\\n     *\\n     * @param uuid The UUID of the attestation to revoke.\\n     * @param attester The attesting account.\\n     * @param v The recovery ID.\\n     * @param r The x-coordinate of the nonce R.\\n     * @param s The signature data.\\n     */\\n    function revoke(\\n        bytes32 uuid,\\n        address attester,\\n        uint8 v,\\n        bytes32 r,\\n        bytes32 s\\n    ) external;\\n}\\n\",\"keccak256\":\"0xeca3ac3bacec52af15b2c86c5bf1a1be315aade51fa86f95da2b426b28486b1e\",\"license\":\"MIT\"},\"contracts/interfaces/IMarketRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\ninterface IMarketRegistry {\\n    function isVerifiedLender(uint256 _marketId, address _lender)\\n        external\\n        returns (bool);\\n}\\n\",\"keccak256\":\"0xe8cd48f64d0504c1f95b426a6f9fd42e94933394c7c908f582eec959ae489929\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a060405234801561001057600080fd5b5060405161139838038061139883398101604081905261002f91610044565b60601b6001600160601b031916608052610074565b60006020828403121561005657600080fd5b81516001600160a01b038116811461006d57600080fd5b9392505050565b60805160601c6112f16100a7600039600081816102d901528181610411015281816105b1015261092e01526112f16000f3fe6080604052600436106100e15760003560e01c80637cfc18181161007f578063947a75b411610059578063947a75b4146102a0578063ce46e046146102b3578063ddfafef6146102c7578063ec979082146102fb57600080fd5b80637cfc18181461023e5780638129fc1c1461025e5780638c7ab2931461027357600080fd5b80633ef19a9b116100bb5780633ef19a9b146101ae5780633fa7f688146101de57806340c275f2146101fe578063532f56941461021e57600080fd5b80631a4808d2146101065780633c0db7881461013c5780633d3690291461016057600080fd5b3661010157604051631574f9f360e01b815260040160405180910390fd5b005b600080fd5b34801561011257600080fd5b50610126610121366004610fa1565b610311565b60405161013391906111fe565b60405180910390f35b34801561014857600080fd5b5061015260015481565b604051908152602001610133565b34801561016c57600080fd5b5061019661017b366004610fa1565b6000908152600260205260409020546001600160a01b031690565b6040516001600160a01b039091168152602001610133565b3480156101ba57600080fd5b506101ce6101c9366004610fba565b6103b6565b6040519015158152602001610133565b3480156101ea57600080fd5b506100ff6101f9366004610fea565b61049c565b34801561020a57600080fd5b506100ff610219366004610e49565b6106e6565b34801561022a57600080fd5b506100ff61023936600461104c565b61079e565b34801561024a57600080fd5b506100ff610259366004610fba565b610807565b34801561026a57600080fd5b506100ff61088e565b34801561027f57600080fd5b5061029361028e366004610fa1565b610a98565b6040516101339190611195565b6101ce6102ae366004610eae565b610ab5565b3480156102bf57600080fd5b5060006101ce565b3480156102d357600080fd5b506101967f000000000000000000000000000000000000000000000000000000000000000081565b34801561030757600080fd5b5061015260045481565b600081815260026020526040902060010180546060919061033190611234565b80601f016020809104026020016040519081016040528092919081815260200182805461035d90611234565b80156103aa5780601f1061037f576101008083540402835291602001916103aa565b820191906000526020600020905b81548152906001019060200180831161038d57829003601f168201915b50505050509050919050565b60008281526002602081905260408220015460ff16156104925760008381526002602090815260408083206001600160a01b0386811685526005909101909252918290205491516330cd251f60e21b815260048101929092527f0000000000000000000000000000000000000000000000000000000000000000169063c334947c9060240160206040518083038186803b15801561045357600080fd5b505afa158015610467573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061048b9190610f4e565b9050610496565b5060015b92915050565b6005805460ff19166001179055856104ef5760405162461bcd60e51b8152602060048201526011602482015270125b9d985b1a59081b585c9ad95d081251607a1b60448201526064015b60405180910390fd5b6000868152600260205260409020546001600160a01b03168061054b5760405162461bcd60e51b815260206004820152601460248201527313585c9ad95d081bdddb995c881b9bdd081cd95d60621b60448201526064016104e6565b6000878152600260208190526040909120015460ff166105ad5760405162461bcd60e51b815260206004820152601f60248201527f4c656e646572206174746573746174696f6e206e6f742072657175697265640060448201526064016104e6565b60007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031663930ed013886001548960008d8d60405160200161060a9291909182526001600160a01b0316602082015260400190565b604051602081830303815290604052888c8c8c6040518a63ffffffff1660e01b815260040161064199989796959493929190611134565b602060405180830381600087803b15801561065b57600080fd5b505af115801561066f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106939190610f6b565b60008981526002602081815260408084206001600160a01b038d168552600581018352908420859055928c9052529091506106d19060030188610b66565b50506005805460ff1916905550505050505050565b60006004600081546106f79061126f565b91829055509050610709818484610b82565b600081815260026020526040902080546001600160a01b0319166001600160a01b038716179055831561075457600081815260026020819052604090912001805460ff191660011790555b846001600160a01b03167fa69fa77c6a90b171cf4e3d9a9dd6c4e56fbd1fbbdcf3925eaf600ccaa917feab8260405161078f91815260200190565b60405180910390a25050505050565b60008381526002602052604090205483906001600160a01b031633146107f65760405162461bcd60e51b815260206004820152600d60248201526c2737ba103a34329037bbb732b960991b60448201526064016104e6565b610801848484610b82565b50505050565b60008281526002602052604090205482906001600160a01b0316331461085f5760405162461bcd60e51b815260206004820152600d60248201526c2737ba103a34329037bbb732b960991b60448201526064016104e6565b5060009182526002602052604090912080546001600160a01b0319166001600160a01b03909216919091179055565b600054610100900460ff16806108a7575060005460ff16155b61090a5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084016104e6565b600054610100900460ff1615801561092c576000805461ffff19166101011790555b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166381fa6cd36040518163ffffffff1660e01b815260040160206040518083038186803b15801561098557600080fd5b505afa158015610999573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109bd9190610f84565b6040805163a99e7e2960e01b81526004810191909152602960448201527f2875696e74323536206d61726b657449642c2061646472657373206c656e646560648201526872416464726573732960b81b60848201523060248201526001600160a01b03919091169063a99e7e299060a401602060405180830381600087803b158015610a4857600080fd5b505af1158015610a5c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a809190610f6b565b6001558015610a95576000805461ff00191690555b50565b600081815260026020526040902060609061049690600301610cb0565b60055460009060ff16610aca57506000610b5b565b6000878730604051602001610ae19392919061110e565b60408051601f1981840301815291905280516020909101209050600080610b0a87890189610fba565b9150915082600154148015610b305750806001600160a01b03168b6001600160a01b0316145b8015610b5557506000828152600260205260409020546001600160a01b038681169116145b93505050505b979650505050505050565b6000610b7b836001600160a01b038416610cbd565b9392505050565b60008311610bc05760405162461bcd60e51b815260206004820152600b60248201526a04d61726b657420494420360ac1b60448201526064016104e6565b60008282604051602001610bd59291906111e2565b60408051601f1981840301815291815281516020928301206000818152600390935291205490915015610c425760405162461bcd60e51b81526020600482015260156024820152746e6f6e2d756e69717565206d61726b65742055524960581b60448201526064016104e6565b600081815260036020908152604080832087905586835260029091529020610c6e906001018484610d67565b507f6218b53065a32d32b3f52d9ad728c1b826a2aae15fc1ee92f83836debbcc1029848484604051610ca293929190611211565b60405180910390a150505050565b60606000610b7b83610d0c565b6000818152600183016020526040812054610d0457508154600181810184556000848152602080822090930184905584548482528286019093526040902091909155610496565b506000610496565b6060816000018054806020026020016040519081016040528092919081815260200182805480156103aa57602002820191906000526020600020905b815481526020019060010190808311610d485750505050509050919050565b828054610d7390611234565b90600052602060002090601f016020900481019282610d955760008555610ddb565b82601f10610dae5782800160ff19823516178555610ddb565b82800160010185558215610ddb579182015b82811115610ddb578235825591602001919060010190610dc0565b50610de7929150610deb565b5090565b5b80821115610de75760008155600101610dec565b60008083601f840112610e1257600080fd5b50813567ffffffffffffffff811115610e2a57600080fd5b602083019150836020828501011115610e4257600080fd5b9250929050565b60008060008060608587031215610e5f57600080fd5b8435610e6a81611298565b93506020850135610e7a816112ad565b9250604085013567ffffffffffffffff811115610e9657600080fd5b610ea287828801610e00565b95989497509550505050565b600080600080600080600060a0888a031215610ec957600080fd5b8735610ed481611298565b9650602088013567ffffffffffffffff80821115610ef157600080fd5b610efd8b838c01610e00565b909850965060408a0135915080821115610f1657600080fd5b50610f238a828b01610e00565b909550935050606088013591506080880135610f3e81611298565b8091505092959891949750929550565b600060208284031215610f6057600080fd5b8151610b7b816112ad565b600060208284031215610f7d57600080fd5b5051919050565b600060208284031215610f9657600080fd5b8151610b7b81611298565b600060208284031215610fb357600080fd5b5035919050565b60008060408385031215610fcd57600080fd5b823591506020830135610fdf81611298565b809150509250929050565b60008060008060008060c0878903121561100357600080fd5b86359550602087013561101581611298565b945060408701359350606087013560ff8116811461103257600080fd5b9598949750929560808101359460a0909101359350915050565b60008060006040848603121561106157600080fd5b83359250602084013567ffffffffffffffff81111561107f57600080fd5b61108b86828701610e00565b9497909650939450505050565b6000815180845260005b818110156110be576020818501810151868301820152016110a2565b818111156110d0576000602083870101525b50601f01601f19169290920160200192915050565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b8284823760609190911b6bffffffffffffffffffffffff19169101908152601401919050565b600061012060018060a01b03808d1684528b60208501528a60408501528960608501528160808501526111698285018a611098565b971660a0840152505060ff9390931660c084015260e08301919091526101009091015295945050505050565b6020808252825182820181905260009190848201906040850190845b818110156111d65783516001600160a01b0316835292840192918401916001016111b1565b50909695505050505050565b6020815260006111f66020830184866110e5565b949350505050565b602081526000610b7b6020830184611098565b83815260406020820152600061122b6040830184866110e5565b95945050505050565b600181811c9082168061124857607f821691505b6020821081141561126957634e487b7160e01b600052602260045260246000fd5b50919050565b600060001982141561129157634e487b7160e01b600052601160045260246000fd5b5060010190565b6001600160a01b0381168114610a9557600080fd5b8015158114610a9557600080fdfea26469706673582212207fd12110a823a303dd5183a6244b4b47c015768a7e98704154b6bab58f04cefa64736f6c63430008060033",
+  "deployedBytecode": "0x6080604052600436106100e15760003560e01c80637cfc18181161007f578063947a75b411610059578063947a75b4146102a0578063ce46e046146102b3578063ddfafef6146102c7578063ec979082146102fb57600080fd5b80637cfc18181461023e5780638129fc1c1461025e5780638c7ab2931461027357600080fd5b80633ef19a9b116100bb5780633ef19a9b146101ae5780633fa7f688146101de57806340c275f2146101fe578063532f56941461021e57600080fd5b80631a4808d2146101065780633c0db7881461013c5780633d3690291461016057600080fd5b3661010157604051631574f9f360e01b815260040160405180910390fd5b005b600080fd5b34801561011257600080fd5b50610126610121366004610fa1565b610311565b60405161013391906111fe565b60405180910390f35b34801561014857600080fd5b5061015260015481565b604051908152602001610133565b34801561016c57600080fd5b5061019661017b366004610fa1565b6000908152600260205260409020546001600160a01b031690565b6040516001600160a01b039091168152602001610133565b3480156101ba57600080fd5b506101ce6101c9366004610fba565b6103b6565b6040519015158152602001610133565b3480156101ea57600080fd5b506100ff6101f9366004610fea565b61049c565b34801561020a57600080fd5b506100ff610219366004610e49565b6106e6565b34801561022a57600080fd5b506100ff61023936600461104c565b61079e565b34801561024a57600080fd5b506100ff610259366004610fba565b610807565b34801561026a57600080fd5b506100ff61088e565b34801561027f57600080fd5b5061029361028e366004610fa1565b610a98565b6040516101339190611195565b6101ce6102ae366004610eae565b610ab5565b3480156102bf57600080fd5b5060006101ce565b3480156102d357600080fd5b506101967f000000000000000000000000000000000000000000000000000000000000000081565b34801561030757600080fd5b5061015260045481565b600081815260026020526040902060010180546060919061033190611234565b80601f016020809104026020016040519081016040528092919081815260200182805461035d90611234565b80156103aa5780601f1061037f576101008083540402835291602001916103aa565b820191906000526020600020905b81548152906001019060200180831161038d57829003601f168201915b50505050509050919050565b60008281526002602081905260408220015460ff16156104925760008381526002602090815260408083206001600160a01b0386811685526005909101909252918290205491516330cd251f60e21b815260048101929092527f0000000000000000000000000000000000000000000000000000000000000000169063c334947c9060240160206040518083038186803b15801561045357600080fd5b505afa158015610467573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061048b9190610f4e565b9050610496565b5060015b92915050565b6005805460ff19166001179055856104ef5760405162461bcd60e51b8152602060048201526011602482015270125b9d985b1a59081b585c9ad95d081251607a1b60448201526064015b60405180910390fd5b6000868152600260205260409020546001600160a01b03168061054b5760405162461bcd60e51b815260206004820152601460248201527313585c9ad95d081bdddb995c881b9bdd081cd95d60621b60448201526064016104e6565b6000878152600260208190526040909120015460ff166105ad5760405162461bcd60e51b815260206004820152601f60248201527f4c656e646572206174746573746174696f6e206e6f742072657175697265640060448201526064016104e6565b60007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b031663930ed013886001548960008d8d60405160200161060a9291909182526001600160a01b0316602082015260400190565b604051602081830303815290604052888c8c8c6040518a63ffffffff1660e01b815260040161064199989796959493929190611134565b602060405180830381600087803b15801561065b57600080fd5b505af115801561066f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106939190610f6b565b60008981526002602081815260408084206001600160a01b038d168552600581018352908420859055928c9052529091506106d19060030188610b66565b50506005805460ff1916905550505050505050565b60006004600081546106f79061126f565b91829055509050610709818484610b82565b600081815260026020526040902080546001600160a01b0319166001600160a01b038716179055831561075457600081815260026020819052604090912001805460ff191660011790555b846001600160a01b03167fa69fa77c6a90b171cf4e3d9a9dd6c4e56fbd1fbbdcf3925eaf600ccaa917feab8260405161078f91815260200190565b60405180910390a25050505050565b60008381526002602052604090205483906001600160a01b031633146107f65760405162461bcd60e51b815260206004820152600d60248201526c2737ba103a34329037bbb732b960991b60448201526064016104e6565b610801848484610b82565b50505050565b60008281526002602052604090205482906001600160a01b0316331461085f5760405162461bcd60e51b815260206004820152600d60248201526c2737ba103a34329037bbb732b960991b60448201526064016104e6565b5060009182526002602052604090912080546001600160a01b0319166001600160a01b03909216919091179055565b600054610100900460ff16806108a7575060005460ff16155b61090a5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b60648201526084016104e6565b600054610100900460ff1615801561092c576000805461ffff19166101011790555b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166381fa6cd36040518163ffffffff1660e01b815260040160206040518083038186803b15801561098557600080fd5b505afa158015610999573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109bd9190610f84565b6040805163a99e7e2960e01b81526004810191909152602960448201527f2875696e74323536206d61726b657449642c2061646472657373206c656e646560648201526872416464726573732960b81b60848201523060248201526001600160a01b03919091169063a99e7e299060a401602060405180830381600087803b158015610a4857600080fd5b505af1158015610a5c573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a809190610f6b565b6001558015610a95576000805461ff00191690555b50565b600081815260026020526040902060609061049690600301610cb0565b60055460009060ff16610aca57506000610b5b565b6000878730604051602001610ae19392919061110e565b60408051601f1981840301815291905280516020909101209050600080610b0a87890189610fba565b9150915082600154148015610b305750806001600160a01b03168b6001600160a01b0316145b8015610b5557506000828152600260205260409020546001600160a01b038681169116145b93505050505b979650505050505050565b6000610b7b836001600160a01b038416610cbd565b9392505050565b60008311610bc05760405162461bcd60e51b815260206004820152600b60248201526a04d61726b657420494420360ac1b60448201526064016104e6565b60008282604051602001610bd59291906111e2565b60408051601f1981840301815291815281516020928301206000818152600390935291205490915015610c425760405162461bcd60e51b81526020600482015260156024820152746e6f6e2d756e69717565206d61726b65742055524960581b60448201526064016104e6565b600081815260036020908152604080832087905586835260029091529020610c6e906001018484610d67565b507f6218b53065a32d32b3f52d9ad728c1b826a2aae15fc1ee92f83836debbcc1029848484604051610ca293929190611211565b60405180910390a150505050565b60606000610b7b83610d0c565b6000818152600183016020526040812054610d0457508154600181810184556000848152602080822090930184905584548482528286019093526040902091909155610496565b506000610496565b6060816000018054806020026020016040519081016040528092919081815260200182805480156103aa57602002820191906000526020600020905b815481526020019060010190808311610d485750505050509050919050565b828054610d7390611234565b90600052602060002090601f016020900481019282610d955760008555610ddb565b82601f10610dae5782800160ff19823516178555610ddb565b82800160010185558215610ddb579182015b82811115610ddb578235825591602001919060010190610dc0565b50610de7929150610deb565b5090565b5b80821115610de75760008155600101610dec565b60008083601f840112610e1257600080fd5b50813567ffffffffffffffff811115610e2a57600080fd5b602083019150836020828501011115610e4257600080fd5b9250929050565b60008060008060608587031215610e5f57600080fd5b8435610e6a81611298565b93506020850135610e7a816112ad565b9250604085013567ffffffffffffffff811115610e9657600080fd5b610ea287828801610e00565b95989497509550505050565b600080600080600080600060a0888a031215610ec957600080fd5b8735610ed481611298565b9650602088013567ffffffffffffffff80821115610ef157600080fd5b610efd8b838c01610e00565b909850965060408a0135915080821115610f1657600080fd5b50610f238a828b01610e00565b909550935050606088013591506080880135610f3e81611298565b8091505092959891949750929550565b600060208284031215610f6057600080fd5b8151610b7b816112ad565b600060208284031215610f7d57600080fd5b5051919050565b600060208284031215610f9657600080fd5b8151610b7b81611298565b600060208284031215610fb357600080fd5b5035919050565b60008060408385031215610fcd57600080fd5b823591506020830135610fdf81611298565b809150509250929050565b60008060008060008060c0878903121561100357600080fd5b86359550602087013561101581611298565b945060408701359350606087013560ff8116811461103257600080fd5b9598949750929560808101359460a0909101359350915050565b60008060006040848603121561106157600080fd5b83359250602084013567ffffffffffffffff81111561107f57600080fd5b61108b86828701610e00565b9497909650939450505050565b6000815180845260005b818110156110be576020818501810151868301820152016110a2565b818111156110d0576000602083870101525b50601f01601f19169290920160200192915050565b81835281816020850137506000828201602090810191909152601f909101601f19169091010190565b8284823760609190911b6bffffffffffffffffffffffff19169101908152601401919050565b600061012060018060a01b03808d1684528b60208501528a60408501528960608501528160808501526111698285018a611098565b971660a0840152505060ff9390931660c084015260e08301919091526101009091015295945050505050565b6020808252825182820181905260009190848201906040850190845b818110156111d65783516001600160a01b0316835292840192918401916001016111b1565b50909695505050505050565b6020815260006111f66020830184866110e5565b949350505050565b602081526000610b7b6020830184611098565b83815260406020820152600061122b6040830184866110e5565b95945050505050565b600181811c9082168061124857607f821691505b6020821081141561126957634e487b7160e01b600052602260045260246000fd5b50919050565b600060001982141561129157634e487b7160e01b600052601160045260246000fd5b5060010190565b6001600160a01b0381168114610a9557600080fd5b8015158114610a9557600080fdfea26469706673582212207fd12110a823a303dd5183a6244b4b47c015768a7e98704154b6bab58f04cefa64736f6c63430008060033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "attestLender(uint256,address,uint256,uint8,bytes32,bytes32)": {
+        "details": "The signature must match that of the market owner.",
+        "params": {
+          "lenderAddress": "The address of the lender to add to the market.",
+          "marketId": "The market ID to add a lender to.",
+          "r": "Signature value",
+          "s": "Signature value",
+          "v": "Signature value"
+        }
+      },
+      "createMarket(address,bool,string)": {
+        "params": {
+          "_initialOwner": "Address who will initially own the market.",
+          "_requireLenderAttestation": "Boolean that indicates if lenders require attestation to join market.",
+          "_uri": "URI string to get metadata details about the market."
+        }
+      },
+      "getAllVerifiedLendersForMarket(uint256)": {
+        "params": {
+          "marketId": "The ID of a market."
+        },
+        "returns": {
+          "_0": "Array of addresses that have been added to a market."
+        }
+      },
+      "getMarketOwner(uint256)": {
+        "params": {
+          "marketId": "The ID of a market."
+        },
+        "returns": {
+          "_0": "The address of a market's owner."
+        }
+      },
+      "getMarketURI(uint256)": {
+        "params": {
+          "marketId": "The ID of a market."
+        },
+        "returns": {
+          "_0": "URI of a market's metadata."
+        }
+      },
+      "isPayable()": {
+        "details": "Returns whether the resolver supports ETH transfers"
+      },
+      "isVerifiedLender(uint256,address)": {
+        "params": {
+          "lenderAddress": "Address to check.",
+          "marketId": "The ID of a market."
+        },
+        "returns": {
+          "_0": "Boolean indicating if a lender has been added to a market."
+        }
+      },
+      "resolve(address,bytes,bytes,uint256,address)": {
+        "details": "This function must only be called by the `attestLender` function above.",
+        "params": {
+          "": "@param attestor Market owner's address who signed the attestation.",
+          "data": "Data the must include the market ID and lender's address",
+          "recipient": "Lender's address who is being attested.",
+          "schema": "The schema used for the attestation."
+        },
+        "returns": {
+          "_0": "Boolean indicating the attestation was successful."
+        }
+      },
+      "setMarketURI(uint256,string)": {
+        "params": {
+          "marketId": "The ID of a market.",
+          "uri": "A URI that points to a market's metadata."
+        }
+      },
+      "transferMarketOwnership(uint256,address)": {
+        "params": {
+          "marketId": "The ID of a market.",
+          "newOwner": "Address of the new market owner. Requirements: - The caller must by the current owner."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "attestLender(uint256,address,uint256,uint8,bytes32,bytes32)": {
+        "notice": "Adds a lender to a market via delegated attestation."
+      },
+      "createMarket(address,bool,string)": {
+        "notice": "Creates a new market."
+      },
+      "getAllVerifiedLendersForMarket(uint256)": {
+        "notice": "Gets addresses of all attested lenders"
+      },
+      "getMarketOwner(uint256)": {
+        "notice": "Gets the address of a market's owner."
+      },
+      "getMarketURI(uint256)": {
+        "notice": "Gets the metadata URI of a market."
+      },
+      "isVerifiedLender(uint256,address)": {
+        "notice": "Checks if a lender has been attested and added to a market."
+      },
+      "resolve(address,bytes,bytes,uint256,address)": {
+        "notice": "Verifies an attestation is valid."
+      },
+      "setMarketURI(uint256,string)": {
+        "notice": "Sets the metadata URI for a market."
+      },
+      "transferMarketOwnership(uint256,address)": {
+        "notice": "Transfers ownership of a marketplace."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 599,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 602,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 5902,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "lenderAttestationSchemaId",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_bytes32"
+      },
+      {
+        "astId": 5907,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "markets",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_uint256,t_struct(Marketplace)5900_storage)"
+      },
+      {
+        "astId": 5911,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "_uriToId",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_bytes32,t_uint256)"
+      },
+      {
+        "astId": 5913,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "marketCount",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 5915,
+        "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+        "label": "_isAttesting",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_bool"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_bytes32)dyn_storage": {
+        "base": "t_bytes32",
+        "encoding": "dynamic_array",
+        "label": "bytes32[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_bytes32)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bytes32)",
+        "numberOfBytes": "32",
+        "value": "t_bytes32"
+      },
+      "t_mapping(t_bytes32,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_uint256,t_struct(Marketplace)5900_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct MarketRegistry.Marketplace)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Marketplace)5900_storage"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(AddressSet)4296_storage": {
+        "encoding": "inplace",
+        "label": "struct EnumerableSet.AddressSet",
+        "members": [
+          {
+            "astId": 4295,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "_inner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_struct(Set)3995_storage"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Marketplace)5900_storage": {
+        "encoding": "inplace",
+        "label": "struct MarketRegistry.Marketplace",
+        "members": [
+          {
+            "astId": 5888,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 5890,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "metadataURI",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 5892,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "lenderAttestationRequired",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_bool"
+          },
+          {
+            "astId": 5895,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "verifiedLendersForMarket",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_struct(AddressSet)4296_storage"
+          },
+          {
+            "astId": 5899,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "lenderAttestationIds",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_mapping(t_address,t_bytes32)"
+          }
+        ],
+        "numberOfBytes": "192"
+      },
+      "t_struct(Set)3995_storage": {
+        "encoding": "inplace",
+        "label": "struct EnumerableSet.Set",
+        "members": [
+          {
+            "astId": 3990,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "_values",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_array(t_bytes32)dyn_storage"
+          },
+          {
+            "astId": 3994,
+            "contract": "contracts/MarketRegistry.sol:MarketRegistry",
+            "label": "_indexes",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_bytes32,t_uint256)"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

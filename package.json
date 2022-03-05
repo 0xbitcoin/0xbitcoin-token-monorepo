@@ -1,0 +1,77 @@
+{
+  "name": "@scaffold-eth/typescript",
+  "version": "0.2.0",
+  "keywords": [
+    "ethereum",
+    "react",
+    "uniswap",
+    "workspaces",
+    "yarn"
+  ],
+  "private": true,
+  "scripts": {
+    "build": "yarn app build",
+    "serve": "yarn app serve",
+    "chain": "yarn contracts chain",
+    "fork": "yarn contracts fork",
+    "node": "yarn contracts chain",
+    "test": "yarn contracts test",
+    "start": "yarn app start",
+    "compile": "yarn contracts compile",
+    "export": "yarn contracts export",
+    "deploy": "yarn contracts deploy",
+    "watch": "yarn contracts watch",
+    "accounts": "yarn contracts accounts",
+    "balance": "yarn contracts balance",
+    "send": "yarn contracts send",
+    "ipfs": "yarn app ipfs",
+    "surge": "yarn app surge",
+    "s3": "yarn app s3",
+    "ship": "yarn app ship",
+    "generate": "yarn contracts generate",
+    "account": "yarn contracts account",
+    "mine": "yarn contracts mine",
+    "wallet": "yarn contracts wallet",
+    "fundedwallet": "yarn contracts fundedwallet",
+    "flatten": "yarn contracts flatten",
+    "clean": "yarn contracts clean",
+    "run-graph-node": "yarn services run-graph-node",
+    "remove-graph-node": "yarn services remove-graph-node",
+    "clean-graph-node": "yarn services clean-graph-node",
+    "graph-prepare": "mustache packages/subgraph/config/config.json packages/subgraph/src/subgraph.template.yaml > packages/subgraph/subgraph.yaml",
+    "graph-codegen": "yarn subgraph graph codegen",
+    "graph-build": "yarn subgraph graph build",
+    "graph-create-local": "yarn subgraph graph create --node http://localhost:8020/ scaffold-eth/your-contract",
+    "graph-remove-local": "yarn subgraph graph remove --node http://localhost:8020/ scaffold-eth/your-contract",
+    "graph-deploy-local": "yarn subgraph graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 scaffold-eth/your-contract",
+    "graph-ship-local": "yarn graph-prepare && yarn graph-codegen && yarn graph-deploy-local",
+    "deploy-and-graph": "yarn deploy && yarn graph-ship-local",
+    "theme": "yarn app theme",
+    "watch-theme": "yarn app watch",
+    "template:merge": ".template/merge",
+    "contracts": "yarn workspace @scaffold-eth/hardhat",
+    "app": "yarn workspace @scaffold-eth/vite-app-ts",
+    "services": "yarn workspace @scaffold-eth/services",
+    "subgraph": "yarn workspace @scaffold-eth/subgraph"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/hardhat-ts",
+      "packages/vite-app-ts",
+      "packages/services/*",
+      "packages/subgraph"
+    ]
+  },
+  "packageManager": "yarn@3.1.0",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "prettier": "^2.4.1",
+    "shx": "^0.3.3"
+  },
+  "dependencies": {
+    "netlify-cli": "^9.0.2",
+    "react": "^17.0.2",
+    "web-vitals": "^2.1.2"
+  },
+  "proxy": "http://ec2-18-191-91-161.us-east-2.compute.amazonaws.com:4000/"
+}
