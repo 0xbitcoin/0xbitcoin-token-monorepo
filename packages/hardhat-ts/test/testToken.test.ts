@@ -1,11 +1,14 @@
 
-import { BigNumber as BN, BigNumberish, Signer } from 'ethers'
+import { BigNumberish, Signer } from 'ethers'
 import hre from 'hardhat'
 import { XTestToken  } from '../types/typechain'
 import { use, should } from 'chai'
 import chaiAsPromised from 'chai-as-promised'
 import { solidity } from 'ethereum-waffle'
  
+
+
+import BigNumber from 'bignumber.js'
 
 use(chaiAsPromised)
 use(solidity)
@@ -58,6 +61,21 @@ describe('0xTestToken', function () {
     it('should have the tokenAddr address set', async () => {
       const tokenAddr = testTokenContract.address
       tokenAddr.should.exist
+    })
+
+
+    it('should predict mining target changes', async () => {
+
+      const originalTarget = new BigNumber('27606985387162255149739023449108101809804435888681546220650096895197184')
+
+      let blocksDelta = 46491
+
+      let newTargetResult = await testTokenContract.calculateDifficultyChange(originalTarget.toFixed(0),blocksDelta )
+
+      const newTarget = new BigNumber(newTargetResult._hex)
+       
+      console.log('originalTarget',originalTarget.toFixed(0) )
+      console.log('newTarget',newTarget.toFixed(0) )
     })
   })
 
